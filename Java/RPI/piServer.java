@@ -1,8 +1,8 @@
 import java.net.*;
-import java.io.IOException;
+import java.io.*;
 
 public class piServer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Create serversocket and listen for a connection
         ServerSocket serverSocket = new ServerSocket(8080);
         System.out.println("Server online: listening on port 8080...");
@@ -15,10 +15,12 @@ public class piServer {
 
         // While connection should be maintained, listen for messages
         String escapeString = "SERVER.EXIT";
-        do {
+        while (true) {
             String message = dataInputStream.readUTF();
             System.out.println("NEW MESSAGE: " + message);
-        } while (!(messge.equals(escapeString)));
+
+            if (message.equals(escapeString)) {break;}
+        }
 
         // End connection
         System.out.println("Closing server...");

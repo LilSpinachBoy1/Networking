@@ -1,7 +1,7 @@
-import java.io.IOException;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.io.Scanner;
+import java.util.Scanner;
 
 public class client {
     public static void main(String[] args) throws IOException {
@@ -20,7 +20,7 @@ public class client {
         // Keep connection open while escape string not sent
         String escapeString = "SERVER.EXIT";
         while (true) {
-            String message = sc.readLine();
+            String message = sc.nextLine();
             dataOut.writeUTF(message);
 
             if (message.equals(escapeString)) {
