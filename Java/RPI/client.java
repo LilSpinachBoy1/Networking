@@ -15,12 +15,23 @@ public class client {
         // Create data streams
         DataInputStream dataIn = new DataInputStream(socket.getInputStream());
         DataOutputStream dataOut = new DataOutputStream(socket.getOutputStream());
+        Scanner sc = new Scanner(System.in);
 
         // Keep connection open while escape string not sent
         String escapeString = "SERVER.EXIT";
-        do {
-            String message = System.
+        while (true) {
+            String message = sc.readLine();
             dataOut.writeUTF(message);
+
+            if (message.equals(escapeString)) {
+                break;
+            }
         }
+
+        // Close connections and say goodbye
+        System.out.println("Goodbye!");
+        socket.close();
+        dataOut.close();
+        dataIn.close();
     }
 }
