@@ -43,19 +43,20 @@ namespace piServer
     {
         static void Main(string[] args) {
             // Set up and start server
-            IPAddress ipAddress = IPAddress.Parse("10.10.5.12");  // THIS HAS TO RUN ON PI, OR CHANGE TO 127.0.0.1 FOR LOCAL TESTING
+            IPAddress ipAddress = IPAddress.Parse("10.10.5.12");  // THIS HAS TO RUN ON PI (10.10.5.12), OR CHANGE TO 127.0.0.1 FOR LOCAL TESTING
             TcpListener server = new TcpListener(ipAddress, 8080);
             server.Start();
             Console.WriteLine("Started server on " + server.LocalEndpoint);
+            Console.WriteLine("Listening for clients...");
 
             // Accept connection 1
-            Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Accepted connection!"); Console.ForegroundColor = ConsoleColor.White;
             TcpClient c1 = server.AcceptTcpClient();
+            Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Accepted connection 1!"); Console.ForegroundColor = ConsoleColor.White;
             NetworkStream c1_stream = c1.GetStream();
 
             // Accept connection 2
-            Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Accepted connection 2!"); Console.ForegroundColor = ConsoleColor.White;
             TcpClient c2 = server.AcceptTcpClient();
+            Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Accepted connection 2!"); Console.ForegroundColor = ConsoleColor.White;
             NetworkStream c2_stream = c2.GetStream();
 
             // NOTE: This code probably wont work, but we'll give it a go anyway...
