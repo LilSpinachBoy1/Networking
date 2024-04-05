@@ -44,7 +44,7 @@ namespace Client
 
             // Set up client connection
             TcpClient client = new TcpClient();
-            client.Connect(IP), 8080);
+            client.Connect(IP, 8080);
             Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Connected to server! " + client.Client.RemoteEndPoint); Console.ForegroundColor= ConsoleColor.White;
 
             // Create stream for reading and writing data
