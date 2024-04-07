@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sam\\Documents\\0 - Programming\\Java\\Networking\\C#\\RPI\\client\\client.csproj",
+      "projectUniqueName": "C:\\Users\\Sam\\source\\repos\\LilSpinachBoy1\\Networking\\C#\\RPI\\client\\client.csproj",
       "projectName": "client",
-      "projectPath": "C:\\Users\\Sam\\Documents\\0 - Programming\\Java\\Networking\\C#\\RPI\\client\\client.csproj",
+      "projectPath": "C:\\Users\\Sam\\source\\repos\\LilSpinachBoy1\\Networking\\C#\\RPI\\client\\client.csproj",
       "packagesPath": "C:\\Users\\Sam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sam\\Documents\\0 - Programming\\Java\\Networking\\C#\\RPI\\client\\obj\\",
+      "outputPath": "C:\\Users\\Sam\\source\\repos\\LilSpinachBoy1\\Networking\\C#\\RPI\\client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sam\\AppData\\Roaming\\NuGet\\NuGet.Config",

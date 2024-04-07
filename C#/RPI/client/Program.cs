@@ -26,7 +26,7 @@ namespace Client
             int readBytes = stream.Read(recieveBuffer, 0, recieveBuffer.Length);
 
             // Decode message
-            string message = Encoding.ASCII.GetString(readBytes);
+            string message = Encoding.ASCII.GetString(recieveBuffer, 0, readBytes);
 
             // Confirm message recieval
             Console.ForegroundColor = ConsoleColor.DarkCyan;
@@ -37,7 +37,7 @@ namespace Client
     class Program 
     {
         // CONSTANTS
-        string IP = "10.10.5.12";  // NOTE: 10.10.5.12 is RPI4B IP, change this to 127.0.0.1 for local testing...
+        public static string IP = "10.10.5.12";  // NOTE: 10.10.5.12 is RPI4B IP, change this to 127.0.0.1 for local testing...
 
         static void Main(string[] args) {
             Console.WriteLine("Hello! I am a client but im not quite done yet...");
@@ -61,7 +61,7 @@ namespace Client
 
                 if (msg == "SERVER.EXIT")
                 {
-                    break;
+                    Thread.CurrentThread.Abort();
                 }
             });
 
